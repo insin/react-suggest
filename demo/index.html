@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>react-suggest</title>
+  <script src="http://fb.me/react-0.13.2.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.13.2.js"></script>
+  <script src="../dist/react-suggest.js"></script>
+  <style>
+  .SuggestionInput {
+    position: relative;
+  }
+  .SuggestionInput__input {
+    background: url("data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw%3D%3D") repeat scroll 0% 0% transparent;
+    left: 0;
+    position: absolute;
+    z-index: 6;
+  }
+  .SuggestionInput__suggestion {
+    background-color: transparent;
+    color: silver;
+    left: 0;
+    position: absolute;
+    z-index: 2;
+  }
+  .SuggestionInput__spacer {
+    visibility: hidden;
+  }
+  </style>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/jsx;harmony=true">void function() { 'use strict';
+
+var {SuggestionInput} = ReactSuggest
+
+var App = React.createClass({
+  render() {
+    return <div className="App">
+      <h2><code>&lt;SuggestionInput/&gt;</code></h2>
+      <p>
+        Wraps <code>&lt;input/&gt;</code> to implement display of a <code>suggestedValue</code> in
+        the background. Read-only examples:
+      </p>
+      <dl>
+        <dt><p><code>&lt;SuggestionInput value="" suggestedValue="Testing"/&gt;</code></p></dt>
+        <dd><SuggestionInput value="" suggestedValue="Testing" onChange={() => {}}/></dd>
+        <dt><p><code>&lt;SuggestionInput value="Test" suggestedValue="Testing"/&gt;</code></p></dt>
+        <dd><SuggestionInput value="Test" suggestedValue="Testing" onChange={() => {}}/></dd>
+        <dt><p><code>&lt;SuggestionInput value="Testing" suggestedValue="Testing"/&gt;</code></p></dt>
+        <dd><SuggestionInput value="Testing" suggestedValue="Testing" onChange={() => {}}/></dd>
+      </dl>
+    </div>
+  }
+})
+
+React.render(<App/>, document.getElementById('app'))
+
+}()</script>
+</body>
